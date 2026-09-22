@@ -19,11 +19,15 @@ import {
 } from "lucide-react";
 
 /* ================================================
-   WIN CHANCE — 0.5 = 50% win, 50% lose
-   Isse hi badal ke ratio control karo.
-   0.7 = zyada win  |  0.3 = zyada lose
+   BOX GAME RULES
+   - Har round me 5 boxes hote hain.
+   - Un 5 me se 3 boxes discount denge (5% / 10% / 15%)
+     — yeh discount tiers fixed hain aur kisi bhi service
+     ke liye same rahenge.
+   - Baaki 2 boxes empty (lose) honge.
+   - Har round (naya service select karne pe ya "Play Again"
+     dabane pe) yeh 5 outcomes dobara shuffle ho jaate hain.
 ================================================ */
-const WIN_CHANCE = 0.5;
 
 /* ================= SERVICES ================= */
 const GAME_SERVICES = [
@@ -65,13 +69,11 @@ const GAME_SERVICES = [
   },
 ];
 
-/* ================= WIN PRIZES ================= */
-const WIN_PRIZES = [
-  { value: "20% OFF", note: "on your first campaign" },
-  { value: "15% OFF", note: "on any 3-month plan" },
-  { value: "FREE AUDIT", note: "complete brand & website audit" },
-  { value: "25% OFF", note: "on annual retainers" },
-  { value: "FREE SESSION", note: "60-min strategy call with our team" },
+/* ================= WIN TIERS (fixed, same for every service) ================= */
+const WIN_TIERS = [
+  { value: "5% OFF", note: "Quarterly Service" },
+  { value: "10% OFF", note: "Half Yearly Service" },
+  { value: "15% OFF", note: "Yearly Service Package" },
 ];
 
 /* ================= LOSE MESSAGES ================= */
@@ -106,19 +108,48 @@ const CONFETTI = Array.from({ length: 26 }).map((_, i) => ({
   size: Math.random() > 0.5 ? "size-2" : "size-1.5",
 }));
 
+/* ================= HELPERS ================= */
+
+// Fisher–Yates shuffle (returns a new array, doesn't mutate input)
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Builds one round of 5 box outcomes: 3 wins (5%/10%/15%) + 2 losses, shuffled
+function buildBoxOutcomes() {
+  const wins = WIN_TIERS.map((tier) => ({ type: "win", ...tier }));
+  const loses = shuffleArray(LOSE_LINES)
+    .slice(0, 2)
+    .map((line) => ({ type: "lose", ...line }));
+  return shuffleArray([...wins, ...loses]);
+}
+
+// Random coupon code, freshly generated on every win
+function generateCouponCode() {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let code = "";
+  for (let i = 0; i < 6; i++) {
+    code += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return `CTM-${code}`;
+}
+
 export default function OfferGameSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const [step, setStep] = useState("select"); // select | play | result
   const [service, setService] = useState(null);
+  const [boxOutcomes, setBoxOutcomes] = useState([]); // 5 outcomes for the current round
   const [picked, setPicked] = useState(null);
   const [opening, setOpening] = useState(false);
   const [result, setResult] = useState(null);
   const [copied, setCopied] = useState(false);
-
-  // Streak guard — same result 2 baar se zyada lagataar nahi aayega
-  const streak = useRef({ type: null, count: 0 });
 
   const winAudio = useRef(null);
   const loseAudio = useRef(null);
@@ -131,35 +162,10 @@ export default function OfferGameSection() {
     a.play().catch(() => {});
   };
 
-  /* ---------- PRIZE DRAW ---------- */
-  const drawPrize = () => {
-    const s = streak.current;
-    let win = Math.random() < WIN_CHANCE;
-
-    // Agar last 2 same the, to is baar ulta result force karo
-    if (s.count >= 2) win = s.type === "lose";
-
-    const type = win ? "win" : "lose";
-    if (s.type === type) s.count += 1;
-    else {
-      s.type = type;
-      s.count = 1;
-    }
-
-    return win
-      ? {
-          type: "win",
-          ...WIN_PRIZES[Math.floor(Math.random() * WIN_PRIZES.length)],
-        }
-      : {
-          type: "lose",
-          ...LOSE_LINES[Math.floor(Math.random() * LOSE_LINES.length)],
-        };
-  };
-
   const chooseService = (s) => {
     playSound(clickAudio);
     setService(s);
+    setBoxOutcomes(buildBoxOutcomes());
     setStep("play");
   };
 
@@ -169,7 +175,11 @@ export default function OfferGameSection() {
     setPicked(idx);
     setOpening(true);
 
-    const prize = drawPrize();
+    const outcome = boxOutcomes[idx];
+    const prize =
+      outcome.type === "win"
+        ? { ...outcome, code: generateCouponCode() }
+        : outcome;
 
     setTimeout(() => {
       setResult(prize);
@@ -179,11 +189,12 @@ export default function OfferGameSection() {
     }, 1500);
   };
 
-  // Sirf boxes pe wapas — service same rahegi
+  // Sirf boxes pe wapas — service same rahegi, naya round shuffle hoga
   const playAgain = () => {
     setPicked(null);
     setResult(null);
     setCopied(false);
+    setBoxOutcomes(buildBoxOutcomes());
     setStep("play");
   };
 
@@ -191,15 +202,13 @@ export default function OfferGameSection() {
   const resetAll = () => {
     setStep("select");
     setService(null);
+    setBoxOutcomes([]);
     setPicked(null);
     setResult(null);
     setCopied(false);
   };
 
-  const couponCode =
-    service && result?.type === "win"
-      ? `CTM-${service.key}-${result.value.replace(/[^0-9A-Z]/g, "").slice(0, 4)}`
-      : "";
+  const couponCode = result?.type === "win" ? result.code : "";
 
   const copyCode = () => {
     navigator.clipboard?.writeText(couponCode);
@@ -267,7 +276,6 @@ export default function OfferGameSection() {
           {/* ============ STEPS ============ */}
           <div className="relative mt-10 min-h-[320px]">
             <AnimatePresence mode="wait">
-              {/* ---------- STEP 1: SELECT SERVICE ---------- */}
               {/* ---------- STEP 1: SELECT SERVICE ---------- */}
               {step === "select" && (
                 <motion.div
@@ -397,9 +405,9 @@ export default function OfferGameSection() {
                     <div className="pointer-events-none absolute right-10 top-12 size-12 rounded-full bg-white/5" />
                     <div className="pointer-events-none absolute bottom-8 left-1/3 size-24 rounded-full bg-plum-400/10 blur-xl" />
 
-                    {/* Boxes */}
-                    <div className="relative z-10 flex flex-wrap items-end justify-center gap-8 sm:gap-12 lg:gap-16">
-                      {[0, 1, 2].map((idx) => (
+                    {/* Boxes — 5 boxes per round, 3 hide a discount, 2 are empty */}
+                    <div className="relative z-10 flex flex-wrap items-end justify-center gap-6 sm:gap-8 lg:gap-10">
+                      {boxOutcomes.map((_, idx) => (
                         <motion.div
                           key={idx}
                           className="relative flex flex-col items-center"
@@ -420,9 +428,9 @@ export default function OfferGameSection() {
                               duration: opening && picked === idx ? 1.2 : 2.4,
                               repeat: opening && picked === idx ? 0 : Infinity,
                               ease: "easeInOut",
-                              delay: idx * 0.2,
+                              delay: idx * 0.15,
                             }}
-                            className="absolute bottom-7 h-7 w-32 rounded-full bg-accent-400/40 blur-xl"
+                            className="absolute bottom-7 h-7 w-28 rounded-full bg-accent-400/40 blur-xl"
                           />
 
                           {/* Box Button */}
@@ -450,7 +458,7 @@ export default function OfferGameSection() {
                                     duration: 2.6,
                                     repeat: Infinity,
                                     ease: "easeInOut",
-                                    delay: idx * 0.3,
+                                    delay: idx * 0.25,
                                   }
                             }
                             whileHover={
@@ -468,7 +476,7 @@ export default function OfferGameSection() {
                                   }
                                 : {}
                             }
-                            className={`group relative z-10 h-[122px] w-[122px] sm:h-[145px] sm:w-[145px] ${
+                            className={`group relative z-10 h-[100px] w-[100px] sm:h-[130px] sm:w-[130px] ${
                               opening && picked !== idx
                                 ? "opacity-25 grayscale"
                                 : ""
@@ -479,27 +487,27 @@ export default function OfferGameSection() {
                             <span className="absolute bottom-1 left-1/2 h-4 w-[82%] -translate-x-1/2 rounded-full bg-black/30 blur-md" />
 
                             {/* Box Body */}
-                            <span className="absolute bottom-2 left-1/2 h-[76px] w-[94px] -translate-x-1/2 rounded-b-[13px] rounded-t-[5px] border border-white/20 bg-gradient-to-br from-[#ff4b8b] via-[#e82d70] to-[#b81758] shadow-[0_16px_25px_-10px_rgba(0,0,0,0.55)] transition-transform duration-300 group-hover:scale-[1.04] sm:h-[91px] sm:w-[112px]">
+                            <span className="absolute bottom-2 left-1/2 h-[66px] w-[82px] -translate-x-1/2 rounded-b-[13px] rounded-t-[5px] border border-white/20 bg-gradient-to-br from-[#ff4b8b] via-[#e82d70] to-[#b81758] shadow-[0_16px_25px_-10px_rgba(0,0,0,0.55)] transition-transform duration-300 group-hover:scale-[1.04] sm:h-[91px] sm:w-[112px]">
                               {/* Vertical Ribbon */}
-                              <span className="absolute left-1/2 top-0 h-full w-[18px] -translate-x-1/2 bg-gradient-to-r from-[#ffd66b] via-[#fff0a8] to-[#e9a72f] shadow-[0_0_8px_rgba(255,214,107,0.35)] sm:w-[21px]" />
+                              <span className="absolute left-1/2 top-0 h-full w-[15px] -translate-x-1/2 bg-gradient-to-r from-[#ffd66b] via-[#fff0a8] to-[#e9a72f] shadow-[0_0_8px_rgba(255,214,107,0.35)] sm:w-[21px]" />
 
                               {/* Horizontal Ribbon */}
-                              <span className="absolute left-0 top-1/2 h-[18px] w-full -translate-y-1/2 bg-gradient-to-b from-[#ffd66b] via-[#fff0a8] to-[#e9a72f] shadow-[0_0_8px_rgba(255,214,107,0.35)] sm:h-[21px]" />
+                              <span className="absolute left-0 top-1/2 h-[15px] w-full -translate-y-1/2 bg-gradient-to-b from-[#ffd66b] via-[#fff0a8] to-[#e9a72f] shadow-[0_0_8px_rgba(255,214,107,0.35)] sm:h-[21px]" />
 
                               {/* Highlight */}
-                              <span className="absolute left-2 top-2 h-5 w-10 rounded-full bg-white/20 blur-md" />
+                              <span className="absolute left-2 top-2 h-5 w-8 rounded-full bg-white/20 blur-md" />
                             </span>
 
                             {/* Lid */}
-                            <span className="absolute left-1/2 top-[27px] h-[25px] w-[105px] -translate-x-1/2 rounded-[6px] border border-white/20 bg-gradient-to-b from-[#ff70a6] to-[#e72d70] shadow-[0_8px_12px_-6px_rgba(0,0,0,0.5)] sm:top-[29px] sm:h-[29px] sm:w-[126px]">
-                              <span className="absolute left-1/2 top-0 h-full w-[18px] -translate-x-1/2 bg-gradient-to-r from-[#ffd66b] via-[#fff0a8] to-[#e9a72f] sm:w-[21px]" />
+                            <span className="absolute left-1/2 top-[24px] h-[22px] w-[91px] -translate-x-1/2 rounded-[6px] border border-white/20 bg-gradient-to-b from-[#ff70a6] to-[#e72d70] shadow-[0_8px_12px_-6px_rgba(0,0,0,0.5)] sm:top-[29px] sm:h-[29px] sm:w-[126px]">
+                              <span className="absolute left-1/2 top-0 h-full w-[15px] -translate-x-1/2 bg-gradient-to-r from-[#ffd66b] via-[#fff0a8] to-[#e9a72f] sm:w-[21px]" />
                             </span>
 
                             {/* Bow */}
-                            <span className="absolute left-1/2 top-[7px] -translate-x-1/2">
-                              <span className="absolute -left-[23px] top-0 h-[22px] w-[29px] rotate-[25deg] rounded-[50%_45%_45%_50%] border border-[#e7a72f] bg-gradient-to-br from-[#fff0a8] to-[#e8a62c] sm:-left-[27px] sm:h-[26px] sm:w-[34px]" />
-                              <span className="absolute -right-[23px] top-0 h-[22px] w-[29px] -rotate-[25deg] rounded-[45%_50%_50%_45%] border border-[#e7a72f] bg-gradient-to-br from-[#fff0a8] to-[#e8a62c] sm:-right-[27px] sm:h-[26px] sm:w-[34px]" />
-                              <span className="absolute left-1/2 top-[7px] size-6 -translate-x-1/2 rounded-full border border-[#e7a72f] bg-gradient-to-br from-[#fff2ad] to-[#e8a62c] sm:size-7" />
+                            <span className="absolute left-1/2 top-[6px] -translate-x-1/2">
+                              <span className="absolute -left-[20px] top-0 h-[19px] w-[25px] rotate-[25deg] rounded-[50%_45%_45%_50%] border border-[#e7a72f] bg-gradient-to-br from-[#fff0a8] to-[#e8a62c] sm:-left-[27px] sm:h-[26px] sm:w-[34px]" />
+                              <span className="absolute -right-[20px] top-0 h-[19px] w-[25px] -rotate-[25deg] rounded-[45%_50%_50%_45%] border border-[#e7a72f] bg-gradient-to-br from-[#fff0a8] to-[#e8a62c] sm:-right-[27px] sm:h-[26px] sm:w-[34px]" />
+                              <span className="absolute left-1/2 top-[6px] size-5 -translate-x-1/2 rounded-full border border-[#e7a72f] bg-gradient-to-br from-[#fff2ad] to-[#e8a62c] sm:size-7" />
                             </span>
 
                             {/* Sparkles */}
@@ -507,7 +515,7 @@ export default function OfferGameSection() {
                           </motion.button>
 
                           {/* Box Number */}
-                          <span className="relative z-20 mt-1 rounded-full bg-white px-6 py-2 text-[11px] font-extrabold tracking-[0.08em] text-brand-700 shadow-lg sm:px-7 sm:py-2.5 sm:text-[12px]">
+                          <span className="relative z-20 mt-1 rounded-full bg-white px-5 py-1.5 text-[10.5px] font-extrabold tracking-[0.08em] text-brand-700 shadow-lg sm:px-6 sm:py-2 sm:text-[11.5px]">
                             BOX {idx + 1}
                           </span>
                         </motion.div>
@@ -659,10 +667,15 @@ export default function OfferGameSection() {
                         transition={{ delay: 0.45 }}
                         className="mt-2.5 text-[15px] text-ink-soft"
                       >
-                        {result.note} — on{" "}
+                        Valid on our{" "}
+                        <span className="font-semibold text-brand-600">
+                          {result.note}
+                        </span>{" "}
+                        plan — applies to your{" "}
                         <span className="font-semibold text-brand-600">
                           {service?.label}
-                        </span>
+                        </span>{" "}
+                        too.
                       </motion.p>
 
                       {/* Coupon */}

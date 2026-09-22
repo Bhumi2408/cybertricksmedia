@@ -77,6 +77,12 @@ const PARTICIPATION_PREVIEW = [
   { value: "Guest", Icon: Mic2, desc: "Attend as an invited guest" },
 ];
 
+/* ---------- Edition gallery collages (2023 & 2024) ---------- */
+const EDITION_GALLERY = [
+  { year: "2024 Edition", img: "/awards/2024.png" },
+  { year: "2023 Edition", img: "/awards/2023.png" },
+];
+
 /* ================================================================
    GOOGLE FORM — replicated field by field (every radio -> dropdown)
 ================================================================ */
@@ -666,6 +672,11 @@ export default function AwardShowPage() {
       </section>
 
       {/* ============================================================
+          EDITION GALLERY — 2024 & 2023 collages, stacked (not side by side)
+      ============================================================ */}
+      <GallerySection />
+
+      {/* ============================================================
           APPLICATION FORM — inline section at the bottom of the page
       ============================================================ */}
       <ApplySection ref={applyRef} />
@@ -675,6 +686,69 @@ export default function AwardShowPage() {
       ============================================================ */}
       <VideoSection />
     </>
+  );
+}
+
+/* ================================================================
+   EDITION GALLERY — 2024 collage on top, 2023 collage below,
+   each in its own full-width section.
+================================================================ */
+function GallerySection() {
+  const galleryRef = useRef(null);
+  const galleryInView = useInView(galleryRef, { once: true, margin: "-100px" });
+
+  return (
+    <section
+      ref={galleryRef}
+      className="relative overflow-hidden py-20"
+      style={{
+        background: "linear-gradient(180deg, #140d03 0%, #0a0703 100%)",
+      }}
+    >
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-[#ffd97a]/8 blur-[140px]" />
+
+      <div className="container-x relative z-10">
+        <div className="mb-14 text-center">
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-[#d9a441]/30 bg-[#ffd97a]/[0.07] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#ffd97a]">
+            <Sparkles className="size-3.5" />
+            Gallery
+          </span>
+          <h2 className="mt-5 text-[28px] font-extrabold text-white sm:text-[36px]">
+            Moments From Our Editions
+          </h2>
+          <p className="mt-2 text-[14.5px] text-white/70">
+            A glimpse of the celebrations from our past editions.
+          </p>
+        </div>
+
+        {EDITION_GALLERY.map((g, i) => (
+          <motion.div
+            key={g.year}
+            initial={{ opacity: 0, y: 30 }}
+            animate={galleryInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: i * 0.2 }}
+            className={`mx-auto max-w-5xl ${i > 0 ? "mt-16" : ""}`}
+          >
+            <div className="mb-5 flex items-center gap-4">
+              <span className="h-px flex-1 bg-gradient-to-r from-transparent to-[#d9a441]/30" />
+              <p className="whitespace-nowrap text-[15px] font-extrabold uppercase tracking-[0.14em] text-[#ffd97a]">
+                {g.year}
+              </p>
+              <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#d9a441]/30" />
+            </div>
+
+            <div className="overflow-hidden rounded-[22px] border border-[#d9a441]/25 bg-[#0a0703] shadow-[0_20px_60px_-25px_rgba(217,164,65,0.4)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={g.img}
+                alt={`${g.year} collage`}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 }
 

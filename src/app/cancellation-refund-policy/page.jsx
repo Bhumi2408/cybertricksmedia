@@ -367,45 +367,7 @@ export default function RefundPolicyPage() {
                 </motion.article>
               ))}
 
-              {/* ---------- CTA ---------- */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.7, delay: 0.6 }}
-                className="relative overflow-hidden rounded-[26px] p-8 text-white sm:p-10"
-                style={{
-                  background:
-                    "linear-gradient(120deg, #1e2762 0%, #2B3990 35%, #7B3FA0 70%, #E0459A 100%)",
-                }}
-              >
-                <div className="pointer-events-none absolute -right-20 -top-20 size-56 rounded-full bg-white/15 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-20 -left-20 size-56 rounded-full bg-aqua-400/25 blur-3xl" />
-
-                <div className="relative flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
-                  <div className="flex items-start gap-4">
-                    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-white/20 text-white backdrop-blur-sm">
-                      <Headphones className="size-5" />
-                    </span>
-                    <div>
-                      <h3 className="text-[20px] font-extrabold leading-tight tracking-tight sm:text-[24px]">
-                        Need to raise a refund request?
-                      </h3>
-                      <p className="mt-2 max-w-md text-[14.5px] text-white/70">
-                        Get in touch with your account manager and we&apos;ll walk you
-                        through the process.
-                      </p>
-                    </div>
-                  </div>
-
-                  <Link
-                    href="/contact-us"
-                    className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[14.5px] font-semibold text-brand-700 transition-all duration-300 hover:-translate-y-0.5 hover:text-accent-600"
-                  >
-                    Contact Us
-                    <ArrowRight className="size-4" />
-                  </Link>
-                </div>
-              </motion.div>
+        
             </div>
           </div>
         </div>
