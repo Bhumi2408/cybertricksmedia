@@ -15,13 +15,13 @@ const CATEGORIES = ["All", "Marketing", "Sales", "Accounts"];
 
 export const JOBS = [
   {
-    title: "Team Manager – Sales",
+    title: "Branch Sales Manager",
     cat: "Sales",
-    openings: 1,
+    openings: 2,
     type: "Full-time",
     location: "Pitampura, Delhi",
-    exp: "4–7 years",
-    desc: "Lead the sales team, drive revenue growth, manage targets, and build strong client relationships while mentoring the sales team.",
+    exp: "5+ years",
+    desc: "Lead the branch sales team, drive revenue growth, manage targets, and build strong client relationships. Requires 2 years of team handling experience with overall 5+ years in the relevant industry.",
     skills: [
       "Sales Team Management",
       "B2B Sales",
@@ -32,7 +32,7 @@ export const JOBS = [
   {
     title: "Senior Sales Executive",
     cat: "Sales",
-    openings: 2,
+    openings: 10,
     type: "Full-time",
     location: "Pitampura, Delhi",
     exp: "2–5 years",
@@ -47,7 +47,7 @@ export const JOBS = [
   {
     title: "Sales Executive – Fresher",
     cat: "Sales",
-    openings: 2,
+    openings: 10,
     type: "Full-time",
     location: "Pitampura, Delhi",
     exp: "Fresher",
