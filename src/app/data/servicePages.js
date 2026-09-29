@@ -1401,7 +1401,7 @@ export const SERVICE_PAGES = {
   /* ============================================================ */
   "crm-software": {
     slug: "crm-software",
-    parent: { label: "Development", href: "/development" },
+    parent: { label: "IT Services", href: "/it-services" },
     eyebrow: "CRM Software",
     title: "CRM Built Around",
     titleAccent: "How Your Team Actually Sells.",
@@ -1503,7 +1503,7 @@ export const SERVICE_PAGES = {
   /* ============================================================ */
   "ui-ux-design": {
     slug: "ui-ux-design",
-    parent: { label: "Development", href: "/development" },
+    parent: { label: "IT Services", href: "/it-services" },
     eyebrow: "UI/UX Design",
     title: "Interfaces Designed to",
     titleAccent: "Convert, Not Just Look Good.",
@@ -1604,7 +1604,7 @@ export const SERVICE_PAGES = {
   /* ============================================================ */
   "mobile-app-development": {
     slug: "mobile-app-development",
-    parent: { label: "Development", href: "/development" },
+    parent: { label: "IT Services", href: "/it-services" },
     eyebrow: "Mobile App Development",
     title: "Apps Built to",
     titleAccent: "Perform, Not Just Launch.",
@@ -1705,7 +1705,7 @@ export const SERVICE_PAGES = {
   /* ============================================================ */
   "web-development": {
     slug: "web-development",
-    parent: { label: "Development", href: "/development" },
+    parent: { label: "IT Services", href: "/it-services" },
     eyebrow: "Web Development",
     title: "Websites Designed to",
     titleAccent: "Impress and Convert.",
@@ -1800,6 +1800,223 @@ export const SERVICE_PAGES = {
       { q: "Will the website be optimized for SEO from the start?", a: "Yes, SEO-friendly development — clean structure, speed optimization and technical SEO — is built into the process, not added later." },
       { q: "Do we own the website's source code and hosting?", a: "Yes. Full source code, hosting access and admin control are handed over to you at launch." },
       { q: "Is there a lock-in contract?", a: "No. Development runs on a project basis; ongoing maintenance and support run on a separate monthly plan you can pause anytime." },
+    ],
+  },
+
+  /* ============================================================ */
+  "gaming-app-development": {
+    slug: "gaming-app-development",
+    parent: { label: "IT Services", href: "/it-services" },
+    eyebrow: "Gaming App Development",
+    title: "Games Built to Be",
+    titleAccent: "Played, Not Just Launched.",
+    intro:
+      "2D, 3D, mobile, cross-platform and multiplayer games — planned, designed, developed, tested and supported by a team that understands both gameplay and business growth.",
+    banner: "/services-banner.png",
+    gradient: "from-accent-500 to-plum-600",
+
+    seo: {
+      title: "Gaming App Development Services in India | Cybertricks Media",
+      description:
+        "Professional gaming app development — 2D and 3D games, mobile and cross-platform games, multiplayer, monetisation, leaderboards and ongoing support. Human development with 20–30% AI assistance.",
+      keywords: [
+        "gaming app development services",
+        "game development company in india",
+        "mobile game development agency delhi",
+        "2d and 3d game development services",
+        "multiplayer game development company",
+        "cross platform game development services",
+      ],
+    },
+
+    stats: [
+      { v: "2D & 3D", l: "Game Formats" },
+      { v: "Android & iOS", l: "Platforms Covered" },
+      { v: "20–30%", l: "AI-Assisted Workflow" },
+    ],
+
+    highlights: [
+      { icon: "Gamepad2", t: "Gameplay First", d: "Mechanics, controls and progression designed to keep players coming back." },
+      { icon: "Zap", t: "Performance Optimized", d: "Fast loading, smooth frame rates and stable builds across supported devices." },
+      { icon: "TrendingUp", t: "Built to Grow", d: "Monetisation, analytics and live updates planned in from day one." },
+    ],
+
+    groups: [
+      {
+        title: "Strategy & Concept", icon: "Compass",
+        items: [
+          { t: "Gaming App Strategy & Planning", d: "Develop a clear gaming app strategy based on your game concept, target audience, platform, monetization model and business objectives." },
+          { t: "Game Concept Development", d: "Transform your gaming idea into a structured concept with gameplay mechanics, features, characters, levels and user experience." },
+          { t: "Game UI/UX Design", d: "Design intuitive menus, controls, dashboards, game screens and navigation systems that make gameplay easy and engaging." },
+          { t: "Character & Environment Development", d: "Create game characters, environments, assets, animations and visual elements aligned with the game's concept." },
+        ],
+      },
+      {
+        title: "Game Development", icon: "Gamepad2",
+        items: [
+          { t: "Game Design & Development", d: "Build engaging and scalable games with intuitive gameplay, interactive elements and performance-focused development." },
+          { t: "2D Game Development", d: "Develop engaging 2D games with custom characters, environments, animations, gameplay mechanics and interactive experiences." },
+          { t: "3D Game Development", d: "Create immersive 3D gaming experiences with detailed environments, characters, animations, physics and interactive gameplay." },
+          { t: "Mobile Game Development", d: "Develop games for Android and iOS devices with responsive controls and mobile-optimized performance." },
+          { t: "Cross-Platform Game Development", d: "Build games that can be deployed across multiple platforms while maintaining consistent gameplay and user experience." },
+          { t: "AI-Assisted Game Development", d: "Use AI as a supporting capability for 20–30% of ideation, development assistance, testing, content generation and workflow optimization, with human developers maintaining technical and creative control.", ai: true },
+        ],
+      },
+      {
+        title: "Multiplayer, Backend & Integrations", icon: "Database",
+        items: [
+          { t: "Multiplayer Game Development", d: "Develop multiplayer functionality with real-time or online gameplay features, player interaction and game-session management." },
+          { t: "Backend & Server Development", d: "Build reliable backend systems for player accounts, game data, sessions, leaderboards, inventory and other gaming features." },
+          { t: "API & Third-Party Integration", d: "Integrate APIs, payment systems, analytics, social login, advertising networks and other required third-party services." },
+        ],
+      },
+      {
+        title: "Monetization & Engagement", icon: "Trophy",
+        items: [
+          { t: "Game Monetization Integration", d: "Implement suitable monetization models such as in-app purchases, subscriptions, advertisements and other approved revenue mechanisms." },
+          { t: "Leaderboard & Reward Systems", d: "Develop ranking, achievement, reward and progression systems to encourage continued user engagement." },
+          { t: "Analytics & Player Insights", d: "Integrate analytics to understand player behaviour, engagement, retention, sessions and other important performance indicators." },
+        ],
+      },
+      {
+        title: "Testing, Launch & Support", icon: "ShieldCheck",
+        items: [
+          { t: "Game Testing & Quality Assurance", d: "Test gameplay, functionality, compatibility, performance and user experience across supported devices and platforms." },
+          { t: "Performance Optimization", d: "Optimize loading times, graphics performance, memory usage, responsiveness and overall game stability." },
+          { t: "Game Maintenance & Updates", d: "Provide ongoing technical support, bug fixes, feature updates, performance improvements and platform compatibility updates." },
+        ],
+      },
+      {
+        title: "Our Approach", icon: "Sparkles",
+        items: [
+          { t: "Human + AI Development Approach", d: "Combine experienced game developers, designers and strategists with responsible AI assistance to improve development efficiency without compromising quality or originality.", ai: true },
+          { t: "Business & Player Growth Focus", d: "Build gaming experiences focused on usability, engagement, retention, scalability and sustainable business growth." },
+        ],
+      },
+    ],
+
+    process: [
+      { n: "01", t: "Concept & Strategy", d: "We shape your game idea, audience, platform and monetization model before any build begins." },
+      { n: "02", t: "Design & Prototype", d: "Gameplay mechanics, UI/UX, characters and environments planned and prototyped." },
+      { n: "03", t: "Build & Integrate", d: "Game developed with backend, multiplayer, monetization and analytics wired in." },
+      { n: "04", t: "Test, Launch & Support", d: "Tested across devices, launched, then maintained with updates and optimization." },
+    ],
+
+    faqs: [
+      { q: "Do you build both 2D and 3D games?", a: "Yes. We develop 2D and 3D games for mobile and cross-platform release, based on your concept, audience and budget." },
+      { q: "How much of the work is done by AI?", a: "Roughly 20–30%, mostly for ideation support, development assistance, testing and content generation. Game design, architecture and creative direction stay entirely human." },
+      { q: "Can you add multiplayer and leaderboards?", a: "Yes. Multiplayer functionality, backend servers, leaderboards, achievements and reward systems are all part of this service." },
+      { q: "How will the game make money?", a: "We help you choose and integrate the right model — in-app purchases, subscriptions, ads or a mix — based on your genre and players." },
+      { q: "Do we own the game's source code and assets?", a: "Yes. Full source code, game assets and admin access are handed over to you at launch." },
+    ],
+  },
+
+  /* ============================================================ */
+  "cyber-security": {
+    slug: "cyber-security",
+    parent: { label: "IT Services", href: "/it-services" },
+    eyebrow: "Cyber Security",
+    title: "Protect Your Business",
+    titleAccent: "Before It Becomes a Headline.",
+    intro:
+      "Risk assessments, penetration testing, cloud, API and application security, monitoring and incident response — led by security professionals who protect your data, customers and business continuity.",
+    banner: "/services-banner.png",
+    gradient: "from-plum-600 to-aqua-500",
+
+    seo: {
+      title: "Cyber Security Services in India | Cybertricks Media",
+      description:
+        "Professional cyber security services — risk assessment, vulnerability assessment, penetration testing, website, cloud and API security, monitoring and incident response. Human-led with 20–30% AI assistance.",
+      keywords: [
+        "cyber security services",
+        "cyber security company in india",
+        "vapt services delhi",
+        "penetration testing services india",
+        "website security audit services",
+        "cloud security services company",
+      ],
+    },
+
+    stats: [
+      { v: "VAPT", l: "Authorized Testing" },
+      { v: "Web, App & Cloud", l: "Coverage" },
+      { v: "20–30%", l: "AI-Assisted Workflow" },
+    ],
+
+    highlights: [
+      { icon: "ShieldCheck", t: "Human-Led Security", d: "Every finding and decision reviewed by experienced security professionals." },
+      { icon: "Target", t: "Risk-Focused", d: "Priorities set by real business impact, not a generic checklist." },
+      { icon: "Lock", t: "Clear Remediation", d: "Actionable reports that tell you what to fix, why and in what order." },
+    ],
+
+    groups: [
+      {
+        title: "Strategy & Assessment", icon: "Compass",
+        items: [
+          { t: "Cyber Security Strategy & Assessment", d: "Develop a security strategy based on your business infrastructure, applications, data, systems, users and potential security risks." },
+          { t: "Security Risk Assessment", d: "Identify security weaknesses, vulnerabilities, exposure points and potential risks across your digital environment." },
+          { t: "AI-Assisted Security Analysis", d: "Use AI-supported tools as a controlled supporting capability for 20–30% of security research, log analysis, threat identification and workflow assistance, with security decisions remaining human-led.", ai: true },
+        ],
+      },
+      {
+        title: "Application Security", icon: "Code2",
+        items: [
+          { t: "Website Security", d: "Assess and strengthen website security against common vulnerabilities, unauthorized access, malicious activity and other digital threats." },
+          { t: "Web Application Security", d: "Identify and address security weaknesses within web applications, APIs, authentication systems and application infrastructure." },
+          { t: "Mobile Application Security", d: "Assess mobile applications for common security risks involving authentication, data storage, APIs, permissions and application logic." },
+          { t: "API Security", d: "Assess API authentication, authorization, input handling, data exposure and other security controls." },
+        ],
+      },
+      {
+        title: "Testing & Infrastructure", icon: "Search",
+        items: [
+          { t: "Vulnerability Assessment", d: "Conduct structured assessments to identify known vulnerabilities and security weaknesses across approved systems and applications." },
+          { t: "Penetration Testing", d: "Perform authorized security testing to identify exploitable weaknesses and provide actionable remediation recommendations." },
+          { t: "Network Security Assessment", d: "Review network architecture, configurations, access controls and security measures to identify potential exposure." },
+          { t: "Cloud Security", d: "Review cloud environments, configurations, access permissions, data protection and security controls to help reduce cloud-related risks." },
+          { t: "Security Hardening", d: "Recommend and implement appropriate security configurations to reduce unnecessary exposure and strengthen systems." },
+        ],
+      },
+      {
+        title: "Data, Access & Threat Protection", icon: "Lock",
+        items: [
+          { t: "Data Security & Protection", d: "Help protect sensitive business and customer data through appropriate access controls, encryption, security policies and monitoring." },
+          { t: "Identity & Access Management", d: "Strengthen authentication, authorization, user permissions and access-control processes across business systems." },
+          { t: "Security Monitoring & Threat Detection", d: "Support monitoring of systems and security events to identify suspicious activity and potential threats." },
+          { t: "Malware & Threat Protection", d: "Help organizations strengthen defenses against malware, phishing, ransomware and other common cyber threats." },
+        ],
+      },
+      {
+        title: "Compliance, Response & Reporting", icon: "Settings",
+        items: [
+          { t: "Security Audit & Compliance Support", d: "Review security practices against relevant organizational requirements, standards and applicable compliance needs." },
+          { t: "Incident Response Planning", d: "Develop structured processes for identifying, containing, investigating and recovering from security incidents." },
+          { t: "Security Reporting & Remediation Guidance", d: "Provide clear security reports highlighting identified issues, their potential impact and recommended remediation steps." },
+          { t: "Continuous Security Improvement", d: "Regularly review security controls, emerging threats and system changes to strengthen the overall security posture." },
+        ],
+      },
+      {
+        title: "Our Approach", icon: "Sparkles",
+        items: [
+          { t: "Human + AI Security Approach", d: "Combine experienced cybersecurity professionals, structured security testing and human analysis with carefully controlled AI assistance to improve efficiency while maintaining security oversight.", ai: true },
+          { t: "Business & Risk Protection Focus", d: "Focus on protecting digital assets, customer data, applications, infrastructure and business continuity while reducing avoidable cyber risks." },
+        ],
+      },
+    ],
+
+    process: [
+      { n: "01", t: "Scope & Discovery", d: "We map your systems, applications, data and risks, and agree an authorized testing scope." },
+      { n: "02", t: "Assess & Test", d: "Vulnerability assessment, penetration testing and configuration reviews carried out." },
+      { n: "03", t: "Report & Remediate", d: "Clear findings with impact and prioritized fixes, plus hardening support." },
+      { n: "04", t: "Monitor & Improve", d: "Ongoing monitoring, incident readiness and regular security reviews." },
+    ],
+
+    faqs: [
+      { q: "Is penetration testing safe for our live systems?", a: "Yes. Testing is only performed on systems you authorize, within an agreed scope and schedule, to avoid disruption to your business." },
+      { q: "How much of the work is done by AI?", a: "Roughly 20–30%, mostly for security research, log analysis and threat identification support. Testing, analysis and every security decision stay human-led." },
+      { q: "What do we receive after the assessment?", a: "A clear security report listing identified issues, their potential impact and prioritized remediation steps your team can act on." },
+      { q: "Do you secure cloud, APIs and mobile apps too?", a: "Yes. Website, web application, mobile application, API, network and cloud security are all covered under this service." },
+      { q: "Is there a lock-in contract?", a: "No. Assessments run on a project basis; ongoing monitoring and security support run on a separate monthly plan you can pause anytime." },
     ],
   },
 

@@ -91,15 +91,16 @@ const SERVICES = [
   },
   {
     id: "06",
-    tag: "Web & App Development",
+    tag: "IT Services",
     title: "Designed to Impress, Built to Convert",
     desc: "Lightning-fast websites, scroll-stopping video edits and graphics that make your brand impossible to scroll past.",
     points: [
       "Web & App Development",
       "UI/UX & Graphic Design",
       "CRM Software",
+      "Gaming & Cyber Security",
     ],
-    href: "/web-development",
+    href: "/it-services",
     video: "/home/website.mp4",
     Icon: Code2,
     gradient: "from-aqua-500 to-brand-600",

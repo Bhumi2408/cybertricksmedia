@@ -95,13 +95,15 @@ const COLUMNS = [
   ],
   [
     {
-      title: "Development",
-      href: "/development",
+      title: "IT Services",
+      href: "/it-services",
       links: [
         { label: "Web Development", href: "/web-development" },
         { label: "Mobile App Development", href: "/mobile-app-development" },
         { label: "UI/UX Design", href: "/ui-ux-design" },
         { label: "CRM Software", href: "/crm-software" },
+        { label: "Gaming App Development", href: "/gaming-app-development" },
+        { label: "Cyber Security", href: "/cyber-security" },
       ],
     },
     {

@@ -275,18 +275,18 @@ export const CATEGORIES = {
   },
 
   /* ============================================================ */
-  development: {
-    slug: "development",
-    eyebrow: "Development",
+  "it-services": {
+    slug: "it-services",
+    eyebrow: "IT Services",
     title: "Designed to Impress,",
     titleAccent: "Built to Convert.",
     intro:
-      "Websites, apps, interfaces and custom software built by developers who understand marketing — so what you launch doesn't just work, it sells.",
+      "Websites, apps, games, interfaces, custom software and cyber security — built and protected by engineers who understand marketing, so what you launch doesn't just work, it sells and stays safe.",
     banner: "/development-banners.png",
     gradient: "from-aqua-500 to-plum-600",
     stats: [
       { v: "90+", l: "PageSpeed Target" },
-      { v: "5 Services", l: "Design to Deploy" },
+      { v: "6 Services", l: "Design to Deploy" },
       { v: "Zero", l: "Outsourced Code" },
     ],
     values: [
@@ -316,9 +316,14 @@ export const CATEGORIES = {
         tags: ["Custom Build", "Sales Pipeline", "Automation"]
       },
       {
+        name: "Gaming App Development", icon: "Gamepad2", href: "/gaming-app-development",
+        desc: "2D, 3D, mobile and multiplayer games with monetisation, leaderboards and live updates built in.",
+        tags: ["2D & 3D", "Multiplayer", "Monetisation"]
+      },
+      {
         name: "Cyber Security", icon: "ShieldCheck", href: "/cyber-security",
-        desc: "Audits, hardening, SSL, backups and monitoring so a breach never becomes your brand's headline.",
-        tags: ["Audits", "Hardening", "Monitoring"]
+        desc: "Risk assessments, VAPT, cloud and API security, monitoring and incident response so a breach never becomes your brand's headline.",
+        tags: ["VAPT", "Cloud Security", "Monitoring"]
       },
     ],
   },

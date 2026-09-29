@@ -8,7 +8,7 @@ import {
   Users, Target, BarChart3, Settings, Compass, Palette, TrendingUp,
   Megaphone, ShieldCheck, Zap, Search, Star, Crown, Code2, Clapperboard,
   Radio, MapPin, Store, Video, Music, Film, Building2, CalendarDays,
-  Newspaper, Trophy, PenTool, Smartphone, Database, Handshake,
+  Newspaper, Trophy, PenTool, Smartphone, Database, Handshake, Gamepad2, Lock,
 } from "lucide-react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,7 +25,7 @@ const LUCIDE = {
   Users, Target, BarChart3, Settings, Compass, Palette, TrendingUp,
   Megaphone, ShieldCheck, Zap, Search, Star, Crown, Code2, Clapperboard,
   Radio, MapPin, Store, Video, Music, Film, Building2, CalendarDays,
-  Newspaper, Trophy, PenTool, Smartphone, Database, Handshake, Sparkles, Layers,
+  Newspaper, Trophy, PenTool, Smartphone, Database, Handshake, Sparkles, Layers, Gamepad2, Lock,
 };
 
 const BRANDS = {
