@@ -94,7 +94,7 @@ export default function HeroBanner() {
           VIDEO HIDDEN — SLIDES + BACKGROUND
       ===================================================== */}
 
-      <section className="relative min-h-[700px] w-full overflow-hidden bg-[#f7f8fc] lg:hidden mt-20">
+      <section className="relative min-h-[700px] w-full overflow-hidden bg-[#f7f8fc] lg:hidden">
         {/* =================================================
             PREMIUM BACKGROUND
         ================================================= */}

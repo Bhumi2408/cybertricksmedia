@@ -283,6 +283,20 @@ export default function ServicesPage() {
                 films, hoardings, websites and events, all built under one roof
                 by the same people who pitch it to you.
               </motion.p>
+              {/* Mobile/tablet: right-side banner image yaha dikhegi */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="mx-auto mt-8 w-full max-w-[340px] lg:hidden"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/services-banner.png"
+                  alt="Cybertricks Media services"
+                  className="h-auto w-full object-contain drop-shadow-[0_25px_50px_rgba(111,207,231,0.3)]"
+                />
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 22 }}

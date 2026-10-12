@@ -111,7 +111,7 @@ export default function WhyChooseSection() {
             initial={{ opacity: 0, x: -50, scale: 0.94 }}
             animate={inView ? { opacity: 1, x: 0, scale: 1 } : {}}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
+            className="relative py-8 sm:py-0"
           >
             {/* Glow behind image */}
             <div className="pointer-events-none absolute inset-8 rounded-full bg-gradient-to-br from-aqua-500/25 via-plum-500/20 to-accent-500/25 blur-[80px]" />
@@ -132,7 +132,7 @@ export default function WhyChooseSection() {
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -left-2 top-6 z-20 flex items-center gap-2.5 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-xl sm:left-2"
+              className="absolute -left-1 top-0 z-20 flex items-center gap-2 rounded-2xl border border-white/15 bg-white/10 px-3 py-2 backdrop-blur-xl sm:left-2 sm:top-6 sm:gap-2.5 sm:px-4 sm:py-3"
             >
               <span className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-aqua-400 to-brand-500 text-white">
                 <Award className="size-4" />
@@ -146,7 +146,7 @@ export default function WhyChooseSection() {
             <motion.div
               animate={{ y: [0, 14, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              className="absolute -right-2 bottom-10 z-20 flex items-center gap-2.5 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-xl sm:right-2"
+              className="absolute -right-1 bottom-0 z-20 flex items-center gap-2 rounded-2xl border border-white/15 bg-white/10 px-3 py-2 backdrop-blur-xl sm:right-2 sm:bottom-10 sm:gap-2.5 sm:px-4 sm:py-3"
             >
               <span className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-accent-500 to-plum-600 text-white">
                 <LineChart className="size-4" />

@@ -24,8 +24,8 @@ export default function RootLayout({ children }) {
         <SmoothScroll>
           <Header />
           {/* Header fixed hai, isliye ye spacer content ko header ke exact niche se start karata hai.
-              Height = top utility bar (40px) + main bar unscrolled (88px) = 128px */}
-          <div aria-hidden="true" className="h-[128px]" />
+              Height = top utility bar (40px) + main bar unscrolled (mobile 72px / lg 88px) = 112px / 128px */}
+          <div aria-hidden="true" className="h-[112px] lg:h-[128px]" />
           <main>{children}</main>
           <Footer />
         </SmoothScroll>
