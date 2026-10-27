@@ -71,7 +71,7 @@ export default async function Page({ params }) {
       name: "Cybertricks Media Pvt Ltd",
       url: SITE,
       logo: `${SITE}/logo.png`,
-      telephone: "+91-92666-12221",
+      telephone: "+91-82874-77783",
       email: "info@cybertricksmedia.com",
       address: {
         "@type": "PostalAddress",

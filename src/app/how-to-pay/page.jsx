@@ -28,11 +28,12 @@ const SUPPORT_PHONE = "+91 92666 12221";
 const SUPPORT_EMAIL = "info@cybertricksmedia.com";
 
 const BANK = [
-  { label: "Account Name", value: "Cybertricks Media Pvt Ltd" },
+  { label: "Account Name", value: "CYBERTRICKS MEDIA PRIVATE LIMITED" },
   { label: "Account Number", value: "88800796664" },
   { label: "IFSC Code", value: "IDFB0020225" },
+  { label: "SWIFT code", value: "IDFBINBBMUM" },
   { label: "Bank Name", value: "IDFC FIRST BANK" },
-  { label: "Branch", value: "No H-3/27, Ground Floor, Rohini Residential Scheme, Nearby Gray Saffron Hotel, Sector 18, New Delhi 110089 (India)" },
+  { label: "Branch", value: "NEW DELHI - ROHINI SECTOR 18 BRANCH" },
 ];
 
 const QUICK_AMOUNTS = [5000, 10000, 25000, 50000];

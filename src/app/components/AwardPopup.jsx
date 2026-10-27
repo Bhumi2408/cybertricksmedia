@@ -120,7 +120,7 @@ export default function AwardPopup() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={POSTER}
-                    alt="The Times of MSME Excellence Awards & Business Conference 2026"
+                    alt="The Times of MSME Excellence Awards & Business Conference 2027"
                     onError={(e) => {
                       console.error("Popup poster failed to load:", POSTER);
                       e.currentTarget.style.display = "none";
@@ -165,7 +165,7 @@ export default function AwardPopup() {
                       </p>
                       <p className="mt-1 flex items-center gap-1.5 text-[12px] text-white/50">
                         <Calendar className="size-3" />
-                        Last date — October 31, 2026
+                        Coming Soon — 2027
                       </p>
                     </div>
                   </div>

@@ -10,7 +10,7 @@ export const CLIENTS = [
   { name: "GME Foods", img: "/clients/gme-foods.png" },
   { name: "Nippon Toys", img: "/clients/nippon-toys.png" },
   { name: "Lemodish", img: "/clients/lemodish.jpeg" },
-  { name: "Babaji Udyog", img: "/clients/babaji.webp" }, 
+  { name: "Babaji Udyog", img: "/clients/babaji.png" }, 
   { name: "Guptaji Hotelware", img: "/clients/guptaji.png" }, 
   { name: "Cubella", img: "/clients/cubella.png" }, 
   { name: "Oyang India", img: "/clients/oyang.png" }, 

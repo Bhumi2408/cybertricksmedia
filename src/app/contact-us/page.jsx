@@ -16,10 +16,13 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 config.autoAddCss = false;
 
 /* ================= CONFIG ================= */
-const UPI_ID = "bharatbizmart@barodampay";
+const UPI_ID = "cybertricksmedi101500.rzp@rxairtel";
 
 const WEB3FORMS_ACCESS_KEY = "75064bc8-0384-4b3b-9da8-d29f46f65e7b";
 const THANK_YOU_PAGE = "/thank-you";
+
+const PHONE_PRIMARY = "+91 82874 77783";
+const PHONE_PRIMARY_HREF = "tel:+918287477783";
 
 const PHONE_1 = "+91 92666 12221";
 const PHONE_1_HREF = "tel:+919266612221";
@@ -50,6 +53,9 @@ const CONTACT_CARDS = [
   label: "Call Us",
   value: (
     <span className="flex flex-col gap-1">
+      <a href={PHONE_PRIMARY_HREF} className="hover:text-brand-600 transition">
+        {PHONE_PRIMARY}
+      </a>
       <a href={PHONE_1_HREF} className="hover:text-brand-600 transition">
         {PHONE_1}
       </a>
@@ -59,7 +65,7 @@ const CONTACT_CARDS = [
     </span>
   ),
   sub: "Mon–Sat, 10 AM – 7 PM",
-  href: PHONE_1_HREF,
+  href: PHONE_PRIMARY_HREF,
   gradient: "from-brand-600 to-plum-600",
 },
   {
@@ -771,7 +777,7 @@ useEffect(() => {
                   <div className="relative mt-5 overflow-hidden rounded-2xl bg-canvas p-3">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src="/scanner.jpg"
+                      src="/razorpay-scanner.png"
                       alt={`UPI QR code for ${UPI_ID}`}
                       className="h-auto w-full object-contain"
                     />
@@ -853,8 +859,15 @@ useEffect(() => {
 
   <div>
     <a
-      href={PHONE_1_HREF}
+      href={PHONE_PRIMARY_HREF}
       className="block text-[13.5px] font-bold text-ink hover:text-brand-600"
+    >
+      {PHONE_PRIMARY}
+    </a>
+
+    <a
+      href={PHONE_1_HREF}
+      className="mt-1 block text-[13.5px] font-bold text-ink hover:text-brand-600"
     >
       {PHONE_1}
     </a>

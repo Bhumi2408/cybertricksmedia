@@ -11,7 +11,6 @@ import {
   Trophy,
   Calendar,
   MapPin,
-  Clock,
   Sparkles,
   Loader2,
   Star,
@@ -32,9 +31,8 @@ const EVENT = {
   edition: "3rd Edition",
   host: "Mr. Sunny Rathore",
   title: "The Times of MSME Excellence",
-  subtitle: "Awards & Business Conference 2026",
-  lastDate: "October 31, 2026",
-  eventDate: "December 2026",
+  subtitle: "Awards & Business Conference 2027",
+  eventDate: "Coming Soon — 2027",
   location: "Delhi",
   poweredBy: "BharatBizmart.com",
   poster: "/award-show.jpeg",
@@ -424,7 +422,6 @@ export default function AwardShowPage() {
             className="mt-8 flex flex-wrap items-center justify-center gap-3"
           >
             {[
-              { Icon: Clock, label: "Last Date", value: EVENT.lastDate },
               { Icon: Calendar, label: "Event", value: EVENT.eventDate },
               { Icon: MapPin, label: "Location", value: EVENT.location },
             ].map((c) => (
@@ -519,7 +516,7 @@ export default function AwardShowPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={EVENT.poster}
-                    alt="The Times of MSME Excellence Awards 2026"
+                    alt="The Times of MSME Excellence Awards 2027"
                     className="h-auto w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
                   />
 
@@ -550,7 +547,7 @@ export default function AwardShowPage() {
                 className="absolute -right-4 -top-4 z-20 rounded-2xl border border-[#d9a441]/40 bg-[#140d03] px-5 py-3.5 shadow-[0_18px_44px_-18px_rgba(255,217,122,0.6)]"
               >
                 <p className="text-[20px] font-extrabold leading-none text-[#ffd97a]">
-                  2026
+                  2027
                 </p>
                 <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-white/70">
                   {EVENT.edition}
@@ -977,7 +974,7 @@ const ApplySection = forwardRef(function ApplySection(_props, ref) {
     try {
       const payload = {
         access_key: WEB3FORMS_KEY,
-        subject: `Award Show 2026 — ${form.participationAs} Application from ${form.contactPerson}`,
+        subject: `Award Show 2027 — ${form.participationAs} Application from ${form.contactPerson}`,
         from_name: "Cybertricks Award Show",
         // Web3Forms uses this field to know where to reply to.
         Email: form.email,
@@ -1104,7 +1101,7 @@ const ApplySection = forwardRef(function ApplySection(_props, ref) {
                 <div className="text-center">
                   <span className="inline-flex items-center gap-2.5 rounded-full border border-[#d9a441]/30 bg-[#ffd97a]/[0.07] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#ffd97a]">
                     <Award className="size-3.5" />
-                    Awards 2026
+                    Awards 2027
                   </span>
 
                   <h3 className="mt-5 text-[26px] font-extrabold leading-tight text-white sm:text-[34px]">
@@ -1123,7 +1120,7 @@ const ApplySection = forwardRef(function ApplySection(_props, ref) {
                   </h3>
 
                   <p className="mt-2.5 text-[13.5px] text-white/70">
-                    Last date to apply — {EVENT.lastDate}
+                    Coming Soon — 2027
                   </p>
                 </div>
 

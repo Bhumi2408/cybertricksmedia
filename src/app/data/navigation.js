@@ -163,8 +163,8 @@ export const NAV = [
 ];
 
 export const CONTACT = {
-  phone: "011-461-20491",
-  phoneHref: "tel:011-461-20491",
+  phone: "+91 82874 77783",
+  phoneHref: "tel:+918287477783",
   email: "info@cybertricksmedia.com",
   emailHref: "mailto:info@cybertricksmedia.com",
 };

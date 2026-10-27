@@ -255,6 +255,15 @@ export default function Footer() {
               {/* Contact rows */}
               <div className="mt-6 space-y-3">
                 <a
+                  href={CONTACT.phoneHref}
+                  className="group flex items-center gap-3 text-[13.5px] text-white/70 transition hover:text-white"
+                >
+                  <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-white/10 text-aqua-300 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-aqua-400 group-hover:to-brand-600 group-hover:text-white">
+                    <FontAwesomeIcon icon={faPhone} className="h-3 w-3" />
+                  </span>
+                  {CONTACT.phone}
+                </a>
+                <a
                   href="tel:919266612221"
                   className="group flex items-center gap-3 text-[13.5px] text-white/70 transition hover:text-white"
                 >
