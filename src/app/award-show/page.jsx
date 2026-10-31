@@ -35,7 +35,7 @@ const EVENT = {
   eventDate: "Coming Soon — 2027",
   location: "Delhi",
   poweredBy: "BharatBizmart.com",
-  poster: "/award-show.jpeg",
+  poster: "/award-popup.png",
   trophyLeft: "/trophy.png",
   trophyRight: "/trophy.png",
 };

@@ -8,7 +8,7 @@ import { X, Trophy, ArrowRight, Calendar } from "lucide-react";
 /* ================= CONFIG ================= */
 const DELAY = 7000; // 7 seconds
 const STORAGE_KEY = "ctm-award-popup-seen";
-const POSTER = "/award-show.jpeg";
+const POSTER = "/award-popup.png";
 
 /* Safe storage — iOS Safari private mode throws on setItem() */
 const storage = {
