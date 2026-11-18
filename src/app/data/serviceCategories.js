@@ -421,6 +421,38 @@ export const CATEGORIES = {
           "AI-powered solutions for automation, content creation, customer interactions, business workflows and smarter decision-making.",
         tags: ["AI Automation", "AI Solutions", "Productivity"],
       },
+      {
+        name: "AI Agents",
+        icon: "Bot",
+        href: "/ai-agents",
+        desc:
+          "Custom AI agents that qualify leads, support customers and handle operations tasks across your tools — with guardrails and human approval.",
+        tags: ["Sales Agents", "Support Agents", "Integrations"],
+      },
+      {
+        name: "AI Workflow Automation",
+        icon: "Workflow",
+        href: "/ai-workflow-automation",
+        desc:
+          "AI-powered workflows that automate lead routing, follow-ups, data entry, documents and reporting across your business apps.",
+        tags: ["Lead Routing", "CRM Sync", "Reporting"],
+      },
+      {
+        name: "AI Co-Pilots",
+        icon: "BrainCircuit",
+        href: "/ai-copilots",
+        desc:
+          "Private AI assistants trained on your business knowledge that help every team draft, research and decide faster.",
+        tags: ["Knowledge Base", "Team Assistants", "Secure Access"],
+      },
+      {
+        name: "AI Voice",
+        icon: "Mic",
+        href: "/ai-voice",
+        desc:
+          "AI calling agents, receptionists and multilingual voice-overs that answer, qualify and book — 24/7 with live human handover.",
+        tags: ["Voice Agents", "Multilingual", "Call Analytics"],
+      },
     ],
   },
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
@@ -75,7 +76,7 @@ export default function HeroBanner() {
           ONLY VIDEO
       ===================================================== */}
 
-      <section className="relative hidden h-[610px] w-full overflow-hidden bg-transparent lg:block">
+      <section className="relative hidden w-full overflow-hidden bg-transparent lg:block">
         <video
           autoPlay
           muted
@@ -83,7 +84,7 @@ export default function HeroBanner() {
           playsInline
           preload="auto"
           disablePictureInPicture
-          className="h-full w-full object-contain"
+          className="block h-auto w-full"
         >
           <source src="/hero-banners.mp4" type="video/mp4" />
         </video>
@@ -407,8 +408,8 @@ export default function HeroBanner() {
 
                 {/* CTA */}
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <a
-                    href="/contact"
+                  <Link
+                    href="/contact-us"
                     className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-brand-600 via-plum-500 to-accent-500 px-5 py-3.5 text-[12px] font-bold text-white shadow-[0_16px_35px_-20px_rgba(43,57,144,0.65)]"
                   >
                     Start a Conversation
@@ -416,7 +417,7 @@ export default function HeroBanner() {
                     <span className="grid size-6 place-items-center rounded-full bg-white/15">
                       <ArrowRight className="size-3" />
                     </span>
-                  </a>
+                  </Link>
 
                   <a
                     href="#services"

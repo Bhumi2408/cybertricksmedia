@@ -1,5 +1,6 @@
 import HeroBanner from "@/app/components/sections/HeroBanner";
 import AboutSection from "@/app/components/sections/AboutSection";
+import AIDrivenSection from "@/app/components/sections/AIDrivenSection";
 import ScorecardSection from "@/app/components/sections/ScorecardSection";
 import ServicesSection from "@/app/components/sections/ServicesSection";
 import OfferGameSection from "@/app/components/sections/OfferGameSection";
@@ -18,6 +19,7 @@ export default function Home() {
     <AwardPopup/>
       <HeroBanner />
       <AboutSection />
+      <AIDrivenSection />
       <ScorecardSection />
       <ServicesSection />
       <WhyChooseSection />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, useInView } from "motion/react";
 import { Send, Loader2, Sparkles, AlertCircle } from "lucide-react";
 import { JOBS } from "./OpeningsSection";
@@ -9,6 +10,7 @@ import { JOBS } from "./OpeningsSection";
 const WEB3FORMS_KEY = "75064bc8-0384-4b3b-9da8-d29f46f65e7b"; // 👈 web3forms.com se key le kar yahan paste karo
 
 export default function ApplyForm() {
+  const router = useRouter();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [loading, setLoading] = useState(false);
@@ -30,7 +32,7 @@ export default function ApplyForm() {
       const data = await res.json();
 
       if (data.success) {
-        window.location.href = "/thank-you?type=application";
+        router.push("/thank-you?type=application");
       } else {
         setError(data.message || "Something went wrong. Please try again.");
         setLoading(false);

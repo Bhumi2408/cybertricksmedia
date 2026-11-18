@@ -9,6 +9,7 @@ import {
   Megaphone, ShieldCheck, Zap, Search, Star, Crown, Code2, Clapperboard,
   Radio, MapPin, Store, Video, Music, Film, Building2, CalendarDays,
   Newspaper, Trophy, PenTool, Smartphone, Database, Handshake, Gamepad2, Lock,
+  Bot, Workflow, Mic, BrainCircuit, PhoneCall,
 } from "lucide-react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,6 +27,7 @@ const LUCIDE = {
   Megaphone, ShieldCheck, Zap, Search, Star, Crown, Code2, Clapperboard,
   Radio, MapPin, Store, Video, Music, Film, Building2, CalendarDays,
   Newspaper, Trophy, PenTool, Smartphone, Database, Handshake, Sparkles, Layers, Gamepad2, Lock,
+  Bot, Workflow, Mic, BrainCircuit, PhoneCall,
 };
 
 const BRANDS = {

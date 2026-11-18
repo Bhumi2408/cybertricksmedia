@@ -998,6 +998,398 @@ export const SERVICE_PAGES = {
   },
  
   /* ============================================================ */
+  "ai-agents": {
+    slug: "ai-agents",
+    parent: { label: "AI Services", href: "/ai-services" },
+    eyebrow: "AI Agents",
+    title: "AI Agents That",
+    titleAccent: "Get Work Done.",
+    intro:
+      "Custom AI agents that research, respond, qualify, update and act across your tools — designed around your processes, with clear guardrails and human approval where it matters.",
+    banner: "/services-banner.png",
+    gradient: "from-brand-600 to-plum-600",
+
+    seo: {
+      title: "AI Agent Development Services in India | Cybertricks Media",
+      description:
+        "Custom AI agent development — sales, support, research and operations agents integrated with your CRM, website and business tools, built with guardrails and human oversight.",
+      keywords: [
+        "ai agent development services",
+        "custom ai agents for business",
+        "ai agent development company india",
+        "ai sales agent",
+        "ai customer support agent",
+        "autonomous ai agents for business delhi",
+      ],
+    },
+
+    stats: [
+      { v: "24/7", l: "Always-On Agents" },
+      { v: "Multi-Tool", l: "CRM, Web & Apps" },
+      { v: "Human", l: "Approval Built In" },
+    ],
+
+    highlights: [
+      { icon: "Bot", t: "Built for Your Process", d: "Agents designed around how your team actually works, not a generic chatbot template." },
+      { icon: "ShieldCheck", t: "Guardrails First", d: "Clear permissions, approval steps and limits on what an agent can and cannot do." },
+      { icon: "BarChart3", t: "Measured Results", d: "Every agent is tracked on accuracy, time saved and business outcomes." },
+    ],
+
+    groups: [
+      {
+        title: "Strategy & Design", icon: "Compass",
+        items: [
+          { t: "AI Agent Strategy & Use-Case Discovery", d: "Identify the tasks, decisions and workflows where an AI agent can genuinely save time or improve outcomes." },
+          { t: "Agent Workflow Design", d: "Map what the agent does, which tools it uses, when it asks a human and how it hands over work." },
+          { t: "Knowledge Base Preparation", d: "Organize your documents, FAQs, policies and product information so the agent answers from approved sources." },
+        ],
+      },
+      {
+        title: "Agent Development", icon: "Bot",
+        items: [
+          { t: "Sales & Lead Qualification Agents", d: "Agents that respond to enquiries, ask qualifying questions, score leads and book meetings into your calendar." },
+          { t: "Customer Support Agents", d: "Agents that resolve common queries, track orders, raise tickets and escalate complex cases to your team." },
+          { t: "Research & Content Agents", d: "Agents that gather information, summarize findings and prepare first drafts for human review." },
+          { t: "Operations & Back-Office Agents", d: "Agents that update records, process documents, prepare reports and handle repetitive internal tasks." },
+          { t: "Multi-Agent Systems", d: "Coordinated agents that split complex work into steps and pass tasks between each other." },
+        ],
+      },
+      {
+        title: "Integration & Deployment", icon: "Settings",
+        items: [
+          { t: "CRM & Business Tool Integration", d: "Connect agents to your CRM, helpdesk, email, calendar, spreadsheets and other approved systems." },
+          { t: "Website & WhatsApp Deployment", d: "Deploy agents on your website, WhatsApp and other customer-facing channels." },
+          { t: "API & Custom Tool Integration", d: "Give agents access to custom tools and internal APIs with controlled permissions." },
+        ],
+      },
+      {
+        title: "Safety & Monitoring", icon: "ShieldCheck",
+        items: [
+          { t: "Guardrails & Approval Flows", d: "Define limits, approval steps and escalation rules so sensitive actions always involve a human." },
+          { t: "Testing & Quality Assurance", d: "Test agents against real scenarios for accuracy, tone, edge cases and failure handling before launch." },
+          { t: "Monitoring & Continuous Improvement", d: "Review conversations and actions regularly and improve the agent's instructions, knowledge and tools." },
+        ],
+      },
+      {
+        title: "Our Approach", icon: "Sparkles",
+        items: [
+          { t: "Human + AI Approach", d: "Agents handle repetitive, well-defined work while your team keeps control of strategy, judgement and final decisions.", ai: true },
+          { t: "Business Growth Focus", d: "Build agents focused on faster response times, lower workload, better customer experience and measurable business growth." },
+        ],
+      },
+    ],
+
+    process: [
+      { n: "01", t: "Discover", d: "We study your workflows and pick the tasks where an agent adds real value." },
+      { n: "02", t: "Design", d: "Agent role, tools, knowledge and guardrails mapped and approved." },
+      { n: "03", t: "Build & Integrate", d: "Agent developed, connected to your systems and tested on real scenarios." },
+      { n: "04", t: "Launch & Improve", d: "Deployed with monitoring, reviews and continuous improvement." },
+    ],
+
+    faqs: [
+      { q: "What is the difference between an AI agent and a chatbot?", a: "A chatbot mainly answers questions. An AI agent can also take actions — update your CRM, book meetings, raise tickets or prepare reports — within the permissions you define." },
+      { q: "Can the agent take actions without our approval?", a: "Only the actions you allow. Sensitive steps like refunds, payments or important customer communication can always require human approval." },
+      { q: "Which tools can the agent connect to?", a: "Most CRMs, helpdesks, email, calendars, spreadsheets, WhatsApp and tools with an API. We confirm feasibility during discovery." },
+      { q: "Will the agent give wrong answers?", a: "We reduce this by limiting agents to approved knowledge sources, testing thoroughly and adding escalation rules. Ongoing monitoring catches and fixes issues early." },
+      { q: "Is there a lock-in contract?", a: "No. Development runs on a project basis; monitoring and improvement run on a monthly plan you can pause anytime." },
+    ],
+  },
+
+  /* ============================================================ */
+  "ai-workflow-automation": {
+    slug: "ai-workflow-automation",
+    parent: { label: "AI Services", href: "/ai-services" },
+    eyebrow: "AI Workflow Automation",
+    title: "Automate the Routine,",
+    titleAccent: "Focus on Growth.",
+    intro:
+      "Connect your apps, data and teams with AI-powered workflows that handle repetitive tasks — from lead routing and data entry to reports and follow-ups — accurately and around the clock.",
+    banner: "/services-banner.png",
+    gradient: "from-aqua-500 to-brand-600",
+
+    seo: {
+      title: "AI Workflow Automation Services in India | Cybertricks Media",
+      description:
+        "AI workflow automation services — automate lead management, data entry, document processing, reporting and follow-ups by connecting your business tools with AI. Human-reviewed and measurable.",
+      keywords: [
+        "ai workflow automation services",
+        "business process automation with ai",
+        "ai automation company india",
+        "marketing automation services delhi",
+        "crm automation services",
+        "ai document processing automation",
+      ],
+    },
+
+    stats: [
+      { v: "35%", l: "Avg. Time Saved" },
+      { v: "24/7", l: "Workflows Running" },
+      { v: "100s", l: "Apps Connectable" },
+    ],
+
+    highlights: [
+      { icon: "Workflow", t: "End-to-End Workflows", d: "Whole processes automated across tools, not just single isolated tasks." },
+      { icon: "Zap", t: "Faster, Fewer Errors", d: "Repetitive work handled instantly and consistently, without manual copy-paste." },
+      { icon: "ShieldCheck", t: "You Stay in Control", d: "Approval steps, logs and alerts so nothing important happens unseen." },
+    ],
+
+    groups: [
+      {
+        title: "Audit & Planning", icon: "Compass",
+        items: [
+          { t: "Workflow Audit & Opportunity Mapping", d: "Review your current processes and identify repetitive, rule-based work that can be automated." },
+          { t: "Automation Roadmap", d: "Prioritize automations by time saved, business impact and implementation effort." },
+        ],
+      },
+      {
+        title: "Sales & Marketing Automation", icon: "TrendingUp",
+        items: [
+          { t: "Lead Capture & Routing", d: "Capture leads from forms, ads and WhatsApp, enrich them and route them to the right person instantly." },
+          { t: "Follow-Up & Nurture Automation", d: "Send timely, personalized follow-ups by email, WhatsApp or SMS based on customer actions." },
+          { t: "CRM Automation", d: "Keep your CRM updated automatically — contacts, deal stages, tasks and reminders." },
+          { t: "AI Content & Reply Drafting", d: "Use AI to draft replies, summaries and content variations for human review and approval.", ai: true },
+        ],
+      },
+      {
+        title: "Operations & Data Automation", icon: "Settings",
+        items: [
+          { t: "Document & Invoice Processing", d: "Extract data from invoices, forms and documents and push it into your systems." },
+          { t: "Data Entry & Sync", d: "Sync data between spreadsheets, CRMs, accounting tools and internal systems without manual entry." },
+          { t: "Automated Reporting", d: "Generate and share daily, weekly or monthly reports and dashboards automatically." },
+          { t: "Internal Approvals & Notifications", d: "Automate approval requests, reminders and team notifications across email, Slack or WhatsApp." },
+        ],
+      },
+      {
+        title: "Integration & Reliability", icon: "Database",
+        items: [
+          { t: "App & API Integration", d: "Connect your existing tools through APIs and automation platforms." },
+          { t: "Error Handling & Monitoring", d: "Logs, alerts and fallback steps so failed runs are caught and fixed quickly." },
+          { t: "Documentation & Team Training", d: "Clear documentation and training so your team understands and manages every workflow." },
+        ],
+      },
+      {
+        title: "Our Approach", icon: "Sparkles",
+        items: [
+          { t: "Human + AI Approach", d: "Automation handles repetitive work while people review exceptions, approve sensitive steps and own decisions.", ai: true },
+          { t: "Business Growth Focus", d: "Automate where it saves time, reduces errors and helps your team serve more customers." },
+        ],
+      },
+    ],
+
+    process: [
+      { n: "01", t: "Audit", d: "We map your current workflows and spot what can be automated." },
+      { n: "02", t: "Design", d: "Triggers, steps, approvals and integrations planned and approved." },
+      { n: "03", t: "Build & Test", d: "Workflows built, connected and tested with real data." },
+      { n: "04", t: "Launch & Monitor", d: "Go live with monitoring, alerts and continuous optimization." },
+    ],
+
+    faqs: [
+      { q: "Which processes can be automated?", a: "Any repetitive, rule-based process — lead routing, follow-ups, data entry, document processing, reporting, approvals and notifications are the most common." },
+      { q: "Do we need to change our existing software?", a: "Usually not. We connect the tools you already use through their APIs and automation platforms." },
+      { q: "What happens if an automation fails?", a: "Every workflow includes error handling, logs and alerts, so failures are flagged and fixed quickly instead of silently breaking." },
+      { q: "Where is AI used in these workflows?", a: "For tasks that need understanding — reading documents, classifying enquiries, drafting replies and summarizing. Rule-based steps run as standard automation." },
+      { q: "Is there a lock-in contract?", a: "No. Setup runs on a project basis; maintenance and new automations run on a monthly plan you can pause anytime." },
+    ],
+  },
+
+  /* ============================================================ */
+  "ai-copilots": {
+    slug: "ai-copilots",
+    parent: { label: "AI Services", href: "/ai-services" },
+    eyebrow: "AI Co-Pilots",
+    title: "An AI Co-Pilot",
+    titleAccent: "for Every Team.",
+    intro:
+      "Custom AI assistants trained on your business knowledge that help your sales, marketing, support and operations teams find answers, draft work and decide faster — right inside the tools they already use.",
+    banner: "/services-banner.png",
+    gradient: "from-plum-600 to-accent-500",
+
+    seo: {
+      title: "Custom AI Co-Pilot Development in India | Cybertricks Media",
+      description:
+        "Custom AI co-pilots for sales, marketing, support and operations teams — trained on your business knowledge, integrated with your tools and built with data privacy and human oversight.",
+      keywords: [
+        "custom ai copilot development",
+        "ai assistant for business",
+        "enterprise ai copilot india",
+        "ai knowledge assistant",
+        "ai sales copilot",
+        "internal ai assistant development delhi",
+      ],
+    },
+
+    stats: [
+      { v: "Instant", l: "Answers From Your Data" },
+      { v: "Every Team", l: "Sales to Operations" },
+      { v: "Private", l: "Access-Controlled" },
+    ],
+
+    highlights: [
+      { icon: "BrainCircuit", t: "Knows Your Business", d: "Trained on your documents, products, policies and processes — not generic internet answers." },
+      { icon: "Users", t: "Works Beside Your Team", d: "Helps people draft, research and decide faster; your team stays in charge." },
+      { icon: "ShieldCheck", t: "Secure by Design", d: "Role-based access so each person only sees the information they are allowed to." },
+    ],
+
+    groups: [
+      {
+        title: "Strategy & Knowledge", icon: "Compass",
+        items: [
+          { t: "Co-Pilot Strategy & Use-Case Planning", d: "Identify the teams, tasks and questions where a co-pilot will save the most time." },
+          { t: "Knowledge Base Setup", d: "Connect and organize your documents, SOPs, product data, FAQs and past work as the co-pilot's knowledge source." },
+          { t: "Prompt & Behaviour Design", d: "Define tone, response format, limits and brand guidelines for consistent, reliable answers." },
+        ],
+      },
+      {
+        title: "Team Co-Pilots", icon: "Users",
+        items: [
+          { t: "Sales Co-Pilot", d: "Prepare pitches, proposals, follow-up emails and product answers in seconds." },
+          { t: "Marketing Co-Pilot", d: "Draft campaign ideas, captions, briefs and content variations aligned with your brand voice." },
+          { t: "Support Co-Pilot", d: "Suggest accurate replies to customer queries from your policies and past resolutions." },
+          { t: "HR & Operations Co-Pilot", d: "Answer internal policy questions, assist onboarding and summarize documents and meetings." },
+          { t: "Leadership & Insights Co-Pilot", d: "Summarize reports, highlight trends and answer business questions from your data." },
+        ],
+      },
+      {
+        title: "Integration & Access", icon: "Settings",
+        items: [
+          { t: "Workspace Integration", d: "Make the co-pilot available inside your website dashboard, CRM, Slack, Teams or a private web app." },
+          { t: "Data Source Connections", d: "Connect drives, CRMs, databases and internal tools through secure integrations." },
+          { t: "Role-Based Access Control", d: "Control which teams and people can access which information." },
+        ],
+      },
+      {
+        title: "Quality & Adoption", icon: "ShieldCheck",
+        items: [
+          { t: "Accuracy Testing", d: "Test answers against real questions and refine knowledge and instructions before rollout." },
+          { t: "Team Training & Adoption", d: "Hands-on training so your team uses the co-pilot effectively from day one." },
+          { t: "Usage Analytics & Improvement", d: "Track usage and feedback to keep improving answers and adding new capabilities." },
+        ],
+      },
+      {
+        title: "Our Approach", icon: "Sparkles",
+        items: [
+          { t: "Human + AI Approach", d: "The co-pilot drafts, researches and suggests; your people review, decide and stay accountable.", ai: true },
+          { t: "Business Growth Focus", d: "Build co-pilots that cut busy-work, speed up decisions and help every team deliver more." },
+        ],
+      },
+    ],
+
+    process: [
+      { n: "01", t: "Discover", d: "We identify the teams and tasks where a co-pilot helps most." },
+      { n: "02", t: "Connect Knowledge", d: "Your documents and data organized and connected securely." },
+      { n: "03", t: "Build & Test", d: "Co-pilot configured, integrated and tested on real questions." },
+      { n: "04", t: "Roll Out & Improve", d: "Team training, usage tracking and continuous improvement." },
+    ],
+
+    faqs: [
+      { q: "How is this different from using ChatGPT directly?", a: "A custom co-pilot answers from your own business knowledge, follows your brand and process rules, and sits inside your tools with access controls — generic chat tools do not." },
+      { q: "Is our company data safe?", a: "We use business-grade AI platforms, role-based access and agreed data-handling rules, and review privacy requirements with you before implementation." },
+      { q: "Which teams can use a co-pilot?", a: "Sales, marketing, customer support, HR, operations and leadership — each can have its own co-pilot or a shared one with role-based access." },
+      { q: "Will it replace our employees?", a: "No. It removes busy-work like searching, drafting and summarizing, so your people can focus on judgement, relationships and decisions." },
+      { q: "Is there a lock-in contract?", a: "No. Setup runs on a project basis; hosting, updates and improvements run on a monthly plan you can pause anytime." },
+    ],
+  },
+
+  /* ============================================================ */
+  "ai-voice": {
+    slug: "ai-voice",
+    parent: { label: "AI Services", href: "/ai-services" },
+    eyebrow: "AI Voice",
+    title: "Voice Agents That",
+    titleAccent: "Sound Human, Work 24/7.",
+    intro:
+      "AI voice agents and voice solutions that answer calls, qualify leads, book appointments, send reminders and create natural voice-overs — in multiple Indian languages, with smooth handover to your team.",
+    banner: "/services-banner.png",
+    gradient: "from-accent-500 to-plum-600",
+
+    seo: {
+      title: "AI Voice Agent & Voice Bot Services in India | Cybertricks Media",
+      description:
+        "AI voice solutions — inbound and outbound AI calling agents, appointment booking, lead qualification, IVR modernization and multilingual AI voice-overs, with human handover and call analytics.",
+      keywords: [
+        "ai voice agent services india",
+        "ai calling agent for business",
+        "ai voice bot development",
+        "ai receptionist for business",
+        "multilingual ai voice over",
+        "ai ivr solutions delhi",
+      ],
+    },
+
+    stats: [
+      { v: "24/7", l: "Calls Answered" },
+      { v: "Multilingual", l: "Hindi, English & More" },
+      { v: "Live", l: "Human Handover" },
+    ],
+
+    highlights: [
+      { icon: "Mic", t: "Natural Conversations", d: "Human-like voices that understand intent, accents and interruptions." },
+      { icon: "PhoneCall", t: "Never Miss a Call", d: "Every inbound call answered instantly, even after office hours and during peak times." },
+      { icon: "BarChart3", t: "Every Call Measured", d: "Recordings, transcripts and analytics for every conversation." },
+    ],
+
+    groups: [
+      {
+        title: "Strategy & Design", icon: "Compass",
+        items: [
+          { t: "Voice Use-Case Planning", d: "Identify which calls and conversations can be handled by AI and where your team should step in." },
+          { t: "Conversation Script & Flow Design", d: "Design natural call flows, questions, answers and escalation rules aligned with your brand." },
+          { t: "Voice & Language Selection", d: "Choose voice style, gender, tone and languages that suit your audience." },
+        ],
+      },
+      {
+        title: "AI Calling Agents", icon: "PhoneCall",
+        items: [
+          { t: "Inbound AI Receptionist", d: "Answer calls, respond to common questions, capture details and route callers to the right person." },
+          { t: "Outbound Lead Qualification Calls", d: "Call new leads quickly, ask qualifying questions and pass hot leads to your sales team." },
+          { t: "Appointment Booking & Reminders", d: "Book, confirm and reschedule appointments and send reminder calls automatically." },
+          { t: "Feedback & Survey Calls", d: "Collect customer feedback and survey responses at scale through natural voice conversations." },
+          { t: "IVR Modernization", d: "Replace press-1-press-2 menus with conversational voice that understands what callers say." },
+        ],
+      },
+      {
+        title: "Voice Content", icon: "Mic",
+        items: [
+          { t: "AI Voice-Overs", d: "Natural AI voice-overs for ads, explainers, reels and training videos, reviewed by humans for quality.", ai: true },
+          { t: "Multilingual Voice Localization", d: "Adapt voice content into Hindi, English and other Indian languages." },
+          { t: "Brand Voice Development", d: "Create a consistent, approved voice identity for your brand across channels." },
+        ],
+      },
+      {
+        title: "Integration & Analytics", icon: "Settings",
+        items: [
+          { t: "CRM & Calendar Integration", d: "Log every call, update leads and book slots directly in your CRM and calendar." },
+          { t: "Live Human Handover", d: "Transfer calls to your team instantly when a caller needs a person." },
+          { t: "Call Recording, Transcripts & Analytics", d: "Review conversations, track outcomes and improve scripts based on real data." },
+          { t: "Compliance & Consent", d: "Follow applicable calling regulations, consent requirements and disclosure practices." },
+        ],
+      },
+      {
+        title: "Our Approach", icon: "Sparkles",
+        items: [
+          { t: "Human + AI Approach", d: "AI handles high-volume, repetitive calls while your team takes over complex or sensitive conversations.", ai: true },
+          { t: "Business Growth Focus", d: "Faster response, more qualified leads, fewer missed calls and a better customer experience." },
+        ],
+      },
+    ],
+
+    process: [
+      { n: "01", t: "Plan", d: "Call types, goals, languages and handover rules defined." },
+      { n: "02", t: "Script & Voice", d: "Conversation flows written and voice selected and approved." },
+      { n: "03", t: "Build & Integrate", d: "Voice agent connected to your phone line, CRM and calendar, then tested." },
+      { n: "04", t: "Launch & Optimize", d: "Go live, review call analytics and keep improving scripts." },
+    ],
+
+    faqs: [
+      { q: "Will callers know they are talking to AI?", a: "We recommend transparent disclosure. The voice sounds natural, and callers can always ask to speak to a person." },
+      { q: "Which languages are supported?", a: "Hindi, English and several other Indian languages, depending on your audience and use case." },
+      { q: "Can it transfer the call to our team?", a: "Yes. Calls can be transferred live to your team whenever the caller needs a person or the conversation needs human judgement." },
+      { q: "Can it work with our existing phone number?", a: "In most cases, yes — through call forwarding or integration with your telephony provider. We confirm this during planning." },
+      { q: "Is there a lock-in contract?", a: "No. Setup runs on a project basis; calling usage and support run on a monthly plan you can pause anytime." },
+    ],
+  },
+
+  /* ============================================================ */
   "affiliate-marketing": {
     slug: "affiliate-marketing",
     parent: { label: "Brand & Influence", href: "/brand-influence" },

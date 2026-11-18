@@ -126,6 +126,10 @@ export const NAV = [
         icon: Sparkles,
         links: [
           { label: "AI & Automation Services", href: "/ai-and-automation-services" },
+          { label: "AI Agents", href: "/ai-agents" },
+          { label: "AI Workflow Automation", href: "/ai-workflow-automation" },
+          { label: "AI Co-Pilots", href: "/ai-copilots" },
+          { label: "AI Voice", href: "/ai-voice" },
         ],
       },
       {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "motion/react";
 import { Check, ArrowRight, Home, Mail, Clock, ArrowLeft } from "lucide-react";
 
@@ -54,6 +54,7 @@ export default function ThankYouContent() {
   const type = params.get("type") || "default";
   const data = CONTENT[type] || CONTENT.default;
 
+  const router = useRouter();
   const [count, setCount] = useState(12);
 
   useEffect(() => {
@@ -62,8 +63,8 @@ export default function ThankYouContent() {
   }, []);
 
   useEffect(() => {
-    if (count === 0) window.location.href = "/";
-  }, [count]);
+    if (count === 0) router.push("/");
+  }, [count, router]);
 
   return (
     <section

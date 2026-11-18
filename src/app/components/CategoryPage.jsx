@@ -10,6 +10,7 @@ import {
   Code2, Smartphone, Palette, Database, ShieldCheck, Crown, Star, Users,
   Handshake, CalendarDays, Newspaper, Trophy, PenTool, BarChart3, Target,
   Zap, Megaphone, Share2, Gamepad2, Lock,
+  Bot, Workflow, Mic, BrainCircuit,
 } from "lucide-react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,6 +29,7 @@ const LUCIDE = {
   Code2, Smartphone, Palette, Database, ShieldCheck, Crown, Star, Users,
   Handshake, CalendarDays, Newspaper, Trophy, PenTool, BarChart3, Target,
   Zap, Megaphone, Share2, Gamepad2, Lock, Layers,
+  Bot, Workflow, Mic, BrainCircuit,
 };
 
 const BRANDS = {

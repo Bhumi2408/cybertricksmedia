@@ -70,6 +70,29 @@ body {
   overflow-x: hidden;
 }
 
+/* ================= CUSTOM CURSOR =================
+   Superhero cursor (public/cursor.png resized to 64px / 128px for retina).
+   Hotspot (3 8) = the front fist. A ring + dot follower is drawn by components/layout/CustomCursor.jsx. Text fields keep the normal text cursor. */
+html,
+body,
+a,
+button,
+label,
+select,
+summary,
+[role="button"],
+.cursor-pointer {
+  cursor: url("/cursor-64.png?v=2") 3 8, auto;
+  cursor: -webkit-image-set(url("/cursor-64.png?v=2") 1x, url("/cursor-128.png?v=2") 2x) 3 8, auto;
+  cursor: image-set(url("/cursor-64.png?v=2") 1x, url("/cursor-128.png?v=2") 2x) 3 8, auto;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="file"]),
+textarea,
+[contenteditable="true"] {
+  cursor: text;
+}
+
 ::selection {
   background: var(--color-accent-500);
   color: #fff;

@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, useInView, AnimatePresence } from "motion/react";
 import {
   ArrowRight, ChevronRight, Send, Check, MapPin, Clock,
@@ -109,6 +110,7 @@ const PARTICLES = [
    PAGE
 ================================================================ */
 export default function ContactPage() {
+  const router = useRouter();
   const [form, setForm] = useState({
     name: "", company: "", email: "", phone: "",
     service: "", budget: "", message: "",
@@ -202,7 +204,7 @@ useEffect(() => {
     const result = await response.json();
 
     if (result.success) {
-      window.location.href = THANK_YOU_PAGE;
+      router.push(THANK_YOU_PAGE);
     } else {
       console.error("Web3Forms Error:", result);
       alert("Something went wrong while submitting the form. Please try again.");

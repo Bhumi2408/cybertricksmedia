@@ -121,6 +121,10 @@ const COLUMNS = [
       href: "/ai-services",
       links: [
         { label: "AI Services", href: "/ai-services" },
+        { label: "AI Agents", href: "/ai-agents" },
+        { label: "AI Workflow Automation", href: "/ai-workflow-automation" },
+        { label: "AI Co-Pilots", href: "/ai-copilots" },
+        { label: "AI Voice", href: "/ai-voice" },
       ],
     },
     

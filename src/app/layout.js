@@ -3,6 +3,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import Header from "@/app/components/layout/Header";
 import Footer from "@/app/components/layout/Footer";
 import SmoothScroll from "@/app/components/layout/SmoothScroll";
+import CustomCursor from "@/app/components/layout/CustomCursor";
+import BackgroundMusic from "@/app/components/layout/BackgroundMusic";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -28,6 +30,8 @@ export default function RootLayout({ children }) {
           <div aria-hidden="true" className="h-[112px] lg:h-[128px]" />
           <main>{children}</main>
           <Footer />
+          <CustomCursor />
+          <BackgroundMusic />
         </SmoothScroll>
       </body>
     </html>

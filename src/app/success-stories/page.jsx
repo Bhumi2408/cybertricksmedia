@@ -469,7 +469,7 @@ export default function SuccessStoriesPage() {
           },
           {
             Icon: Users,
-            label: "150+ Brands",
+            label: "370+ Brands",
             cls: "-right-2 top-1/3",
             d: 5.5,
             dir: 16,

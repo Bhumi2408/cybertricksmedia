@@ -27,12 +27,13 @@ const CATEGORIES = [
 ];
 
 /*
-  ratio : "tall" = 3/4 | "wide" = 16/10 | "normal" = 4/3 | "square" = 1/1
+  ratio : not used by the grid anymore — tile sizes come from smTile / lgTile
   type  : "image" (default) | "video"
-  Categories are interleaved so the "All" view looks mixed,
-  and ratios vary WITHIN each category so filtered views look good too.
+  Categories are interleaved so the "All" view looks mixed.
 */
 const PHOTOS = [
+  { id: 49, cat: "Team",         ratio: "normal", img: "/gallery/team7.jpeg" },
+
   /* ---------- ROUND 1 ---------- */
   { id: 1,  cat: "Award Nights", ratio: "tall",   img: "/awards/award1.webp" },
   { id: 2,  cat: "Office Life",  ratio: "tall",   type: "video", src: "/officelife/ofc3.mp4" },
@@ -76,6 +77,7 @@ const PHOTOS = [
 
   /* ---------- ROUND 7 ---------- */
   { id: 31, cat: "Award Nights", ratio: "normal", img: "/awards/award7.webp" },
+  { id: 48, cat: "Office Life",  ratio: "tall",   type: "video", src: "/officelife/ofc9.mp4" },
   { id: 32, cat: "Events",       ratio: "square", img: "/event/event7.webp" },
   { id: 33, cat: "Events",       ratio: "wide",   img: "/event/event8.webp" },
   { id: 34, cat: "Events",       ratio: "normal", img: "/event/event9.webp" },
@@ -103,12 +105,50 @@ const STACK = [
   "/event/event1.webp",
 ];
 
-const RATIO = {
-  tall: "aspect-[3/4]",
-  wide: "aspect-[16/10]",
-  normal: "aspect-[4/3]",
-  square: "aspect-square",
+/* ================================================================
+   GRID TILES — gap-free bento layout
+   Fixed row heights + explicit spans so every row is always filled,
+   whatever the number of items in the selected tab.
+================================================================ */
+const S = {
+  big: "sm:col-span-2 sm:row-span-2",
+  one: "sm:col-span-1 sm:row-span-1",
 };
+const L = {
+  big: "lg:col-span-2 lg:row-span-2",
+  wide: "lg:col-span-2 lg:row-span-1",
+  tall: "lg:col-span-1 lg:row-span-2",
+  full: "lg:col-span-3 lg:row-span-2",
+  one: "lg:col-span-1 lg:row-span-1",
+};
+
+/* sm (2 cols): blocks of 3 = one 2x2 + two 1x1 */
+function smTile(i, n) {
+  const rest = n % 3;
+  if (rest === 1 && i === n - 1) return S.big;
+  return i % 3 === 0 && i < n - rest ? S.big : S.one;
+}
+
+/* lg (3 cols): blocks of 6 = big 2x2 + 2 stacked, then a row of 3.
+   Big tile alternates left / right on every block. */
+function lgTile(i, n) {
+  const start = n - (n % 6);
+  if (i < start) {
+    const j = i % 6;
+    const mirrored = Math.floor(i / 6) % 2 === 1;
+    return j === (mirrored ? 1 : 0) ? L.big : L.one;
+  }
+  const r = n - start;
+  const k = i - start;
+  const PARTIAL = {
+    1: [L.full],
+    2: [L.big, L.tall],
+    3: [L.big, L.one, L.one],
+    4: [L.wide, L.one, L.one, L.wide],
+    5: [L.big, L.one, L.one, L.wide, L.one],
+  };
+  return PARTIAL[r][k];
+}
 
 function GridVideo({ src, poster, className }) {
   const videoRef = useRef(null);
@@ -438,7 +478,7 @@ export default function GalleryPage() {
           {/* ---------- MASONRY ---------- */}
           <div
             key={filter}
-            className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:balance]"
+            className="mt-10 grid auto-rows-[260px] grid-cols-1 gap-4 sm:auto-rows-[220px] sm:grid-cols-2 lg:auto-rows-[240px] lg:grid-cols-3"
           >
             {filtered.map((p, i) => {
               const isVideo = p.type === "video";
@@ -450,11 +490,9 @@ export default function GalleryPage() {
                   animate={gridInView ? { opacity: 1, scale: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: Math.min(i * 0.04, 0.6) }}
                   onClick={() => setOpenIdx(i)}
-                  className="group relative mb-4 block w-full cursor-pointer break-inside-avoid overflow-hidden rounded-[22px] border border-line bg-white shadow-[0_8px_26px_-14px_rgba(43,57,144,0.3)] transition-shadow duration-500 hover:shadow-[0_30px_64px_-26px_rgba(43,57,144,0.55)]"
+                  className={`group relative block h-full w-full cursor-pointer overflow-hidden rounded-[22px] border border-line bg-white shadow-[0_8px_26px_-14px_rgba(43,57,144,0.3)] transition-shadow duration-500 hover:shadow-[0_30px_64px_-26px_rgba(43,57,144,0.55)] ${smTile(i, filtered.length)} ${lgTile(i, filtered.length)}`}
                 >
-                  <div
-                    className={`relative w-full overflow-hidden ${RATIO[p.ratio]}`}
-                  >
+                  <div className="relative h-full w-full overflow-hidden">
                     {isVideo ? (
                       <GridVideo
                         src={p.src}
