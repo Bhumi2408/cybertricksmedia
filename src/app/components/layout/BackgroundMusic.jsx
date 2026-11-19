@@ -4,12 +4,12 @@ import { useEffect, useRef } from "react";
 
 /* Site-wide background music.
    - Lives in the root layout, so it keeps playing across page changes.
-   - Loops forever, volume capped at 70% of the device volume.
+   - Loops forever, volume capped at 15% of the device volume.
    - Same trick as the contact-page video: start MUTED (browsers always allow
      muted autoplay), then try to unmute. If the browser blocks sound, it keeps
      playing silently and unmutes on the very first click / tap / key press. */
 const SRC = "/bgmusic.mp3";
-const MAX_VOLUME = 0.7;
+const MAX_VOLUME = 0.15;
 const GESTURES = ["pointerdown", "mousedown", "touchstart", "touchend", "keydown", "click"];
 
 export default function BackgroundMusic() {
