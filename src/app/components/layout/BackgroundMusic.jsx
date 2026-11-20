@@ -28,8 +28,27 @@ export default function BackgroundMusic() {
     const removeGestures = () =>
       GESTURES.forEach((g) => window.removeEventListener(g, unmuteOnGesture, true));
 
+    // Other media (e.g. the mobile hero video) can hold the music while it
+    // plays with sound: "bgmusic:pause" / "bgmusic:resume".
+    let held = false;
+    const hold = () => {
+      held = true;
+      audio.pause();
+    };
+    const release = () => {
+      if (!held) return;
+      held = false;
+      audio.play().catch(() => {});
+    };
+    window.addEventListener("bgmusic:pause", hold);
+    window.addEventListener("bgmusic:resume", release);
+
     // Unmute and make sure it is playing; resolves true if sound is on.
     const tryUnmute = () => {
+      if (held) {
+        audio.muted = false;
+        return Promise.resolve(true);
+      }
       audio.muted = false;
       return audio
         .play()
@@ -48,7 +67,7 @@ export default function BackgroundMusic() {
 
     // 1) start muted so autoplay is allowed
     audio.muted = true;
-    audio.play().catch(() => {});
+    if (!held) audio.play().catch(() => {});
 
     // 2) shortly after, try to turn the sound on
     const t = setTimeout(() => {
@@ -60,6 +79,8 @@ export default function BackgroundMusic() {
     return () => {
       clearTimeout(t);
       removeGestures();
+      window.removeEventListener("bgmusic:pause", hold);
+      window.removeEventListener("bgmusic:resume", release);
       audio.removeEventListener("volumechange", clamp);
     };
   }, []);
