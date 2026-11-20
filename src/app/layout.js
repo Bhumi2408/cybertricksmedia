@@ -11,6 +11,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
 export const metadata = {
+  metadataBase: new URL("https://www.cybertricksmedia.com"),
+  verification: {
+    google: "guIWpxVtLgsVOtv9kZViyMwPJT6rV5y91DA_nFFnfnk",
+  },
   title: "Cybertricks Media | Best Digital Marketing Company in India",
   description:
     "Award-winning advertising, film production and AI-powered digital marketing company in India. Trusted by 3800+ brands.",
