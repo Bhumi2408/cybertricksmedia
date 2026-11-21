@@ -456,7 +456,7 @@ export default function Footer() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="group fixed bottom-6 right-6 z-40 flex items-center gap-0 overflow-hidden rounded-full bg-[#25D366] px-4 py-4 shadow-[0_14px_36px_-10px_rgba(37,211,102,0.7)] transition-all duration-400 hover:gap-2.5 hover:pr-6"
+        className="group fixed bottom-6 left-6 z-40 flex items-center gap-0 overflow-hidden rounded-full bg-[#25D366] px-4 py-4 shadow-[0_14px_36px_-10px_rgba(37,211,102,0.7)] transition-all duration-400 hover:gap-2.5 hover:pr-6"
       >
         <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-25" />
         <FontAwesomeIcon icon={faWhatsapp} className="relative h-6 w-6 text-white" />

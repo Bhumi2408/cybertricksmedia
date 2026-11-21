@@ -5,6 +5,7 @@ import Footer from "@/app/components/layout/Footer";
 import SmoothScroll from "@/app/components/layout/SmoothScroll";
 import CustomCursor from "@/app/components/layout/CustomCursor";
 import BackgroundMusic from "@/app/components/layout/BackgroundMusic";
+import ChatBot from "@/app/components/layout/ChatBot";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           <Footer />
           <CustomCursor />
           <BackgroundMusic />
+          <ChatBot />
         </SmoothScroll>
       </body>
     </html>
