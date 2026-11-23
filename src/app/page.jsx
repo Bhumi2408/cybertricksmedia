@@ -18,6 +18,17 @@ import { SITE_URL, SITE_NAME } from "@/app/data/site";
 import { CONTACT, SOCIALS } from "@/app/data/navigation";
 
 export const metadata = {
+  title: "Cybertricks Media | Best Digital Marketing Agency in India",
+  description:
+    "Cybertricks Media Pvt Ltd is the Best Digital Marketing Agency in India, delivering results-driven SEO, PPC, social media marketing, web solutions, and more. Contact Us Today!",
+  keywords: [
+    "Best Digital Marketing Agency in India",
+    "Digital Marketing Company in Delhi NCR",
+    "AI Digital Marketing Agency in India",
+    "AI Marketing Agency in India",
+    "AI Marketing Agency in Delhi",
+    "Cybertricks Media",
+  ],
   alternates: { canonical: `${SITE_URL}/` },
   robots: { index: true, follow: true },
 };

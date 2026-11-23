@@ -386,7 +386,7 @@ export default function AboutSection() {
 
             {/* ================= HEADING ================= */}
 
-            <motion.h2
+            <motion.h1
               initial={{
                 opacity: 0,
                 y: 28,
@@ -405,12 +405,12 @@ export default function AboutSection() {
               }}
               className="mt-6 text-[34px] font-extrabold leading-[1.12] tracking-tight text-ink sm:text-[42px] lg:text-[46px]"
             >
-              A Creative Powerhouse{" "}
+              Best Digital Marketing{" "}
 
               <span className="grad-text-anim">
-                Built for Growth.
+                Agency in India
               </span>
-            </motion.h2>
+            </motion.h1>
 
             {/* ========================================================
                 PARAGRAPH 1

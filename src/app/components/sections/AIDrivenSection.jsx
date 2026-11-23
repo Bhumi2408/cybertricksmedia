@@ -125,8 +125,8 @@ export default function AIDrivenSection() {
               transition={{ duration: 0.7, delay: 0.22 }}
               className="mt-6 text-[34px] font-extrabold leading-[1.12] tracking-tight text-ink sm:text-[42px] lg:text-[46px]"
             >
-              Put AI to Work{" "}
-              <span className="grad-text-anim">Across Your Business.</span>
+              Best AI Digital Marketing{" "}
+              <span className="grad-text-anim">Agency in India</span>
             </motion.h2>
 
             <motion.p
