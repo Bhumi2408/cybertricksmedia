@@ -21,7 +21,8 @@ export const metadata = {
     "Award-winning advertising, film production and AI-powered digital marketing company in India. Trusted by 3800+ brands.",
     icons:{
       icon:"/fav.png"
-    }
+    },
+    robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }) {

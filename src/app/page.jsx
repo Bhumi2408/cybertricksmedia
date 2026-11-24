@@ -30,7 +30,7 @@ export const metadata = {
     "Cybertricks Media",
   ],
   alternates: { canonical: `${SITE_URL}/` },
-  robots: { index: true, follow: true },
+  
 };
 
 const ORG_ID = `${SITE_URL}/#organization`;
